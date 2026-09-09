@@ -1,0 +1,38 @@
+
+#Nom du workflow
+name: CI
+
+#Déclencheur
+on: 
+  #Déchenche le workflow sur un push vers la(les) branche(s) mise(s) entre crochets ("[]")
+  push: 
+    branches: [ uat ]
+  #Déclenche le workflow sur une pull request vers la(les) branche(s) mise(s) entre crochets ("[]")
+  pull_request:
+    branches: [ main ]
+  #Déclenchement du workflow manuellement (avec un bouton)
+  workflow_dispatch: 
+
+#Etapes ou actions qui vont s'éxécuter (doit en contenir au moins un).
+jobs:
+  #on va créer un job qui build et release (nom libre ?)
+  build and release:
+    #Runner: exécution du job dans une machine virtuelle (ici Ubuntu) qui va éxécuter mon pipeline
+    runs-on: ubuntu-latest
+
+    #Etapes qui doivent être exécutées dans le runner
+    steps:
+      #Etape qui va dupliquer le répository sur la branche existante (fonction GitHub documentée : https://github.com/actions/checkout)
+      #Marketplace pour les actions : https://github.com/marketplace?type=actions
+      - uses: actions/checkout@v3
+
+      #Execution d'un script (affichage d'un message "Hello World!!!!")
+      - name: Run a single-line script
+        run: echo Hello, World!!!!
+
+      #Execution d'un script (affichage d'un message sur plusieurs lignes)
+      - name: Run a multi-line script
+        #Pour exécuter plusieurs scripts, utiliser "|" et mettre un script par ligne
+        run: |
+          echo Ajout d'une nouvelle action
+          echo Troisième action effectuée

@@ -30,7 +30,7 @@ jobs:
     steps:
       #Etape qui va dupliquer le répository sur la branche existante (fonction GitHub documentée : https://github.com/actions/checkout)
       #Marketplace pour les actions : https://github.com/marketplace?type=actions
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       #Execution d'un script (affichage d'un message "Hello World!!!!")
       - name: Run a single-line script

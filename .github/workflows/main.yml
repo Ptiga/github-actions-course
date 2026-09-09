@@ -19,6 +19,12 @@ jobs:
   build_and_release:
     #Runner: exécution du job dans une machine virtuelle (ici Ubuntu) qui va éxécuter mon pipeline
     runs-on: ubuntu-latest
+    #Ajout de variable d'environnement
+    env:
+      #Ici pour forcer l'utilisation de Node 24 pour les actions JavaScript
+      #FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+      #Ici pour autoriser l'utilisation d'une version non sécurisée de Node.js pour les actions JavaScript
+      ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
 
     #Etapes qui doivent être exécutées dans le runner
     steps:

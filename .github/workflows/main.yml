@@ -34,11 +34,11 @@ jobs:
 
       #Execution d'un script (affichage d'un message "Hello World!!!!")
       - name: Run a single-line script
-        run: echo Hello, World!!!!
+        run: echo "Hello, World!!!!"
 
       #Execution d'un script (affichage d'un message sur plusieurs lignes)
       - name: Run a multi-line script
         #Pour exécuter plusieurs scripts, utiliser "|" et mettre un script par ligne
         run: |
-          echo Ajout d'une nouvelle action
-          echo Troisième action effectuée
+          echo "Ajout d'une nouvelle action"
+          echo "Troisième action effectuée"

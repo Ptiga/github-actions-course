@@ -16,7 +16,7 @@ on:
 #Etapes ou actions qui vont s'éxécuter (doit en contenir au moins un).
 jobs:
   #on va créer un job qui build et release (nom libre ?)
-  build and release:
+  build_and_release:
     #Runner: exécution du job dans une machine virtuelle (ici Ubuntu) qui va éxécuter mon pipeline
     runs-on: ubuntu-latest
 
